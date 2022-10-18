@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alokairu</title>
+</head>
+
+<body>
+    <h1>Sortu Kotxea</h1>
+    <form action="updatekotxeaondb/{{kotxea.id}}" method="post">
+        <div style="display:flex; flex-direction:column;">
+            <label for="inputmodel">Modeloa</label>
+            <input type="text" id="inputmodel" placeholder="Modeloa" name="modeloa" value="{{kotxea.modeloa}}">
+
+            <label for="inputdate">Data</label>
+            <input type="date" id="inputdate" placeholder="Data" name="data" value="{{kotxea.data}}">
+
+            <label for="selectpertsona">Pertsona</label>
+
+            <select id="selectpertsona" name="pertsona">
+                {% for x in mypertsona %}
+                <option value="{{ x.id }}">{{ x.name }}</option>
+                {% endfor %}
+            </select>
+            <a href="/addpertsona">Ez dago?</a>
+
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <br>
+    <a href="../kotxeak">BACK</a>
+</body>
+
+</html>
